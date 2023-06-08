@@ -1,0 +1,39 @@
+@use "./colors" as * ;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+    overflow-x: hidden;
+    outline: none;
+}
+html,body{
+    color-scheme: light dark;
+    font-family: 'light';
+    background: $color3;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+p,li{
+    color:#ccc;
+    line-height: 1.5;
+}
+h1{
+    color:$bright;
+    font-family: 'bold';
+    text-transform: uppercase;
+    font-size: 2em;
+}
+li span{
+    color: $bright;
+}
+.container{
+    max-width:1440px;
+    margin-inline: auto;
+}
+.sect{
+    max-width:900px;
+    margin-inline:auto;
+}

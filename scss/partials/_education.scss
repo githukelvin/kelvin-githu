@@ -1,0 +1,146 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+@use "./mixin" as *;
+
+#education{
+    h1{
+        text-align: center;
+        margin-block: 1em;
+    }
+    .second{
+        display: grid;
+        grid-template-columns: 1.3fr auto;
+        // include tablet
+        @include tablet{
+           width: 90%;
+           margin-inline:auto;
+        }
+        // include phone
+        @include phone{
+            grid-template-columns: 1fr;
+            gap:2em ;
+        }
+        .edu{
+            h3{
+                color: #ff9900;
+            }
+            .skills{
+                h4{color: #ff8800;
+                font-size: 1.2em;
+                
+                }
+                ul{
+                    padding-left: 2em ;
+                    li{
+                        margin-bottom: .5em;
+                        list-style-type:circle ;
+                    }
+                }
+            }
+        }
+    }
+    .certfications{
+        // include
+        @include tablet{
+            width: 90%;
+            margin-inline: auto;
+        }
+        ul{
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            padding-bottom: 2em;
+            // include 
+            @include tablet{
+                grid-template-columns: 1fr 1fr;
+            }
+            // include phone
+            @include phone{
+                grid-template-columns: 1fr;
+            }
+            gap: 1em;
+            li{
+                border-radius: 20px;
+                padding: 1em;
+                display: grid;
+                place-content: center;
+                border: 1px solid #ff9900;
+                width: 100%;
+            cursor: pointer;
+                &:hover{
+                    background-color: #ff7900;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#contact{
+    // include
+    @include tablet{
+        width: 90%;
+        margin-inline: auto;
+    }
+    h1{
+        text-align: center;
+        margin-block: 1em;
+    }
+   .details{
+    display: grid;
+    grid-template-columns: 150px auto auto auto;
+    gap: 1em;
+    // include
+    @include tablet{
+        grid-template-columns: 1fr 2fr;
+    }
+    // include phone
+    @include phone{
+        grid-template-columns: 1fr;
+    }
+    .detail{
+    border: 1px solid #ff6900;
+    padding: .7em;
+    border-radius: 10px;
+        h3{
+            display: flex;
+            gap:10px;
+            color: #f3f520;
+            padding-bottom: .5em;
+        }
+        a{
+            color: #ff6900;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+   }
+   .referees{
+    h2{
+        text-align: center;
+        margin-block: 1em;
+        font-family: 'semibold';
+        color: #a6e311;
+    }
+    .all{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        // INCLUDE PHONE
+        @include phone{
+            grid-template-columns: 1fr;
+        }
+        .referee{
+            margin-bottom: 1.5em;
+            p{
+                font-family: 'light';
+            }
+            .name{
+                font-family: 'bold';
+                color: #ffd500;
+            }
+        }
+    }
+   }
+   padding-bottom: 3em;
+}

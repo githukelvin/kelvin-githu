@@ -1,0 +1,112 @@
+@forward "./partials/";
+@use "./partials/fonts" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixin" as *;
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    .logo{
+        $size:80px;
+        width: $size;
+        a{
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    .ham{
+        width:30px;
+        height: 30px;
+        cursor: pointer;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-image: url('../assets/images/bars-solid.svg');
+        // background: $logo;
+        display: none;
+        &.active{
+            background-image: url('../assets/images/xmark-solid.svg');
+        }
+        // include phone
+        @include phone{
+            display: block;
+        }
+        
+    }
+    .nav{ 
+        
+        ul{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+
+        // include phone
+        @include phone{
+            flex-direction: column;
+            position: absolute;
+            right: 3px;
+            z-index: 99;
+            top: 90px;
+            background-color: #fff;
+            width: 200px;
+            padding: 3em 0 0 2em;
+            transform: translateX(-230%);
+            transition: transform 1s ease-in;
+            overflow-x: hidden;
+            &.active{
+            transition: transform 2s ease-in;
+             transform: translateX(0%);
+            }
+        }
+
+        li{ 
+            // padding-block: .5em;
+            padding-bottom: .5em;
+            // height: fit-content ;
+            a{
+            color:$bright;
+            font-family: 'semibold';
+            position: relative;
+            text-transform: uppercase;
+            margin-inline: 1em;
+
+            // include phone
+            @include phone{
+                color: $color5;
+            }
+         
+        }
+           &:hover {
+               border-bottom: 2px solid $bright;
+               transition: all 1s ease-out;
+
+           }
+    }
+    }}
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background: #00a7ef;
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    left: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 999;
+    // include phone
+    @include phone{
+        // left: 100px;
+        position: fixed;
+        top: 640px;
+    }
+    svg{
+        font-size: 2.2em;
+        cursor: pointer;
+    }
+}

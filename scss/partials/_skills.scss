@@ -1,0 +1,60 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+@use "./mixin" as *;
+#skills{
+    .proff{
+            position: relative;
+            // include
+            @include tablet{
+                width: 90%;
+                margin-inline: auto;
+            }
+        h1{
+            text-align: center;
+            position: relative;
+                margin-block: 1em;
+                font-size: 2.5em;
+        }
+        p{
+            margin-top: 3em;
+            // include phone
+          
+        }
+        // include phone
+        @include phone{
+         ul{
+            li{
+
+                margin-bottom: .7em;
+                span{
+                    padding-right: 5px;
+                }
+            }
+         }
+        }
+    }
+    .personal{
+        @include tablet {
+                width: 90%;
+                margin-inline: auto;
+            }
+        h1{
+            text-align: center;
+            margin-block: 1em;
+        }
+    
+                  @include phone {
+                      ul {
+                          li {
+        
+                              margin-bottom: .7em;
+        
+                              span {
+                                  padding-right: 5px;
+                              }
+                          }
+                      }
+                    }
+        
+    }
+}

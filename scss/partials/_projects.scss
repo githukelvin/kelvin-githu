@@ -1,0 +1,53 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+@use "./mixin" as *;
+#projects{
+    h1{
+        text-align: center;
+        margin-block: 1em;
+    }
+
+    .work{
+        margin-bottom: 2em;
+        padding: 0 1.5em  2.5em 1.5em;
+        border-left: 1px solid #fcf;
+        border-right: 1px solid #ccc;
+        // include
+        @include tablet{
+            width: 90%;
+            margin-inline: auto;
+        }
+        // include phone
+        @include phone{
+            width: 100%;
+            margin-inline: auto;
+            border: 0;
+                p {
+                    padding-block: .5em;
+                }
+        }
+        h3{
+            color: #ff9100;
+            font-family: 'bold';
+            margin-bottom:.5em;
+        }
+  
+        .responsibilites{
+            h4{
+                color: #ffbf00;
+                font-family: 'semibold';
+            }
+            ul{
+                padding-left: 2em;
+                li{
+                    margin-bottom: .5em;
+                    list-style-type:square;
+                    // include phone
+                    @include phone{
+                        list-style-type: square;
+                    }
+                }
+            }
+        }
+    }
+}
